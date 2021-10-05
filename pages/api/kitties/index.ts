@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import kittiesData from "../../../data/ranked-kitties.json";
-import { Kitty, ResponseError } from "../../../utils";
+import { isValidAddress, Kitty, ResponseError } from "../../../utils";
 
 export interface KittiesResponse {
   kitties: Kitty[];
@@ -14,6 +14,7 @@ export default async (
   req: NextApiRequest,
   res: NextApiResponse<KittiesResponse | ResponseError>
 ) => {
+  const walletAddress = req.query.walletAddress as string;
   const kittyNumber = req.query.kittyNumber;
   const limit = req.query.limit as string;
   const cursor = req.query.cursor as string;
@@ -28,6 +29,22 @@ export default async (
   const end = parseInt(limit, 10) + start;
 
   let kitties = rankedKitties;
+
+  if (walletAddress && isValidAddress(walletAddress)) {
+    // Get tokenIds in wallet from opensea
+    const response = await fetch(
+      `https://api.opensea.io/api/v1/assets?asset_contract_address=0x495f947276749ce646f68ac8c248420045cb7b5e&collection=weird-kitties&limit=50&owner=${walletAddress}`
+    );
+
+    // Parse to JSON
+    const json = await response.json();
+
+    const ownedTokenIds = json.assets.map((asset: any) => asset.token_id);
+
+    kitties = kitties.filter((i) =>
+      ownedTokenIds.includes(i.tokenId)
+    );
+  }
 
   if (kittyNumber) {
     if (Array.isArray(kittyNumber)) {

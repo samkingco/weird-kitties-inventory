@@ -3,14 +3,15 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import useSWRInfinite from "swr/infinite";
 import { KeyLoader } from "swr";
-import { fetcher, FetchError, Kitty } from "../utils";
+import { fetcher, FetchError, isValidAddress, Kitty } from "../utils";
 import { KittiesResponse } from "./api/kitties";
 
 const getKey: (
   limit: number,
-  kittyNumbers: string[]
+  kittyNumbers: string[],
+  walletAddress: string
 ) => KeyLoader<KittiesResponse> =
-  (limit, kittyNumbers) => (_, previousPageData) => {
+  (limit, kittyNumbers, walletAddress) => (_, previousPageData) => {
     if (previousPageData && !previousPageData.hasNextPage) return null;
 
     const queryParams = new URLSearchParams();
@@ -20,15 +21,21 @@ const getKey: (
     if (previousPageData && previousPageData.nextCursor) {
       queryParams.set("cursor", previousPageData.nextCursor.toString());
     }
-
-    kittyNumbers.forEach((kittyNumber) => {
-      queryParams.append("kittyNumber", kittyNumber);
-    });
+    if (walletAddress && isValidAddress(walletAddress)) {
+      queryParams.set("walletAddress", walletAddress);
+    } else {
+      kittyNumbers.forEach((kittyNumber) => {
+        queryParams.append("kittyNumber", kittyNumber);
+      });
+    }
 
     return `/api/kitties?${queryParams.toString()}`;
   };
 
 const Home: NextPage = () => {
+  const [walletAddress, setWalletAddress] = useState("");
+  const validWallet = isValidAddress(walletAddress);
+
   const [searchTerm, setSearchTerm] = useState("");
   const kittyNumbers = searchTerm
     ? searchTerm.split(",").map((i) => i.trim())
@@ -38,7 +45,7 @@ const Home: NextPage = () => {
   const { data, error, size, setSize } = useSWRInfinite<
     KittiesResponse,
     FetchError
-  >(getKey(PAGE_SIZE, kittyNumbers), fetcher);
+  >(getKey(PAGE_SIZE, kittyNumbers, walletAddress), fetcher);
 
   const kitties = data
     ? data.reduce((acc: Kitty[], page) => [...acc, ...page.kitties], [])
@@ -65,12 +72,30 @@ const Home: NextPage = () => {
 
       <main className="main">
         <div className="center-content">
+          <a href="https://weirdkitties.com/">
+            <img src="/wk-logo.png" width={280} />
+          </a>
+        </div>
+
+        <div className="search-container">
+          <input
+            value={walletAddress}
+            onChange={(e) => setWalletAddress(e.currentTarget.value)}
+            placeholder="Paste wallet address"
+          />
           <input
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.currentTarget.value)}
             placeholder="Search by kitty numbers"
+            disabled={Boolean(walletAddress && validWallet)}
           />
         </div>
+
+        {isLoadingInitialData && (
+          <div className="center-content">
+            <div className="loading-indicator" />
+          </div>
+        )}
 
         {isEmpty ? (
           <div className="center-content">
@@ -99,7 +124,7 @@ const Home: NextPage = () => {
           </article>
         )}
 
-        {!hasReachedEnd && (
+        {!(hasReachedEnd || isLoadingInitialData || isLoadingMore) && (
           <div className="center-content">
             <button onClick={() => setSize(size + 1)} disabled={isLoadingMore}>
               See more kitties

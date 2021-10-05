@@ -1,3 +1,5 @@
+import { ethers } from "ethers";
+
 export interface Kitty {
   tokenId: string;
   name: string;
@@ -32,4 +34,13 @@ export async function fetcher(url: string) {
     throw error;
   }
   return res.json();
+}
+
+export function isValidAddress(address: string) {
+  try {
+    ethers.utils.getAddress(address);
+  } catch (e) {
+    return false;
+  }
+  return true;
 }
