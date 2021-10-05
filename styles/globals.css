@@ -1,0 +1,175 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  background: #000000;
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0 0 1rem 0;
+}
+
+p + p {
+  margin-top: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  display: block;
+  max-width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button,
+.button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  line-height: 1.5;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+  background-color: #e6007e;
+  color: #ffffff;
+}
+
+input {
+  width: 100%;
+  border-radius: 1rem;
+  border: 2px solid #222222;
+  background-color: #222222;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+input:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus-visible {
+  border: 2px solid #e6007e;
+  outline: none;
+}
+
+.subdued {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+.page {
+  padding: 2rem;
+}
+
+.kitty-grid {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2rem;
+}
+
+.kitty img {
+  border-radius: 1rem;
+}
+
+.kitty-meta {
+  text-align: center;
+}
+
+.center-content {
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 42rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 32rem) {
+  .kitty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 48rem) {
+  .page {
+    padding: 4rem 2rem;
+  }
+
+  .kitty-grid {
+    margin-top: 2rem;
+  }
+
+  .kitty-detail {
+    grid-template-columns: 1fr 16rem;
+    grid-gap: 4rem;
+  }
+}
+
+@media (min-width: 56rem) {
+  .kitty-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
