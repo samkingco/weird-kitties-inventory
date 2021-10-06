@@ -134,7 +134,7 @@ input:focus-visible {
 
 .page,
 .main {
-  height: 100%;
+  min-height: 100%;
 }
 
 .kitty-grid {
