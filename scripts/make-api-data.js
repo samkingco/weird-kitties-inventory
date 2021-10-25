@@ -17,8 +17,6 @@ const combined = rarity.map((i) => ({
   rank: i.rarest,
 }));
 
-console.log(combined);
-
 fs.writeFileSync(
   path.join(process.cwd(), "./data/ranked-kitties.json"),
   JSON.stringify(combined, null, 2)
