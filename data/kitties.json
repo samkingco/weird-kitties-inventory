@@ -8314,14 +8314,6 @@
     "number": "287",
     "attributes": [
       {
-        "type": "Helmet",
-        "value": "Bowler"
-      },
-      {
-        "type": "Head",
-        "value": "Mecha"
-      },
-      {
         "type": "Whiskers",
         "value": "Needles"
       },
@@ -8344,6 +8336,14 @@
       {
         "type": "Background",
         "value": "Green"
+      },
+      {
+        "type": "Helmet",
+        "value": "Bowler"
+      },
+      {
+        "type": "Head",
+        "value": "Mecha"
       }
     ]
   },
@@ -13094,22 +13094,6 @@
     "number": "037",
     "attributes": [
       {
-        "type": "Head",
-        "value": "Weird"
-      },
-      {
-        "type": "Ear Accessories",
-        "value": "Lobe 01"
-      },
-      {
-        "type": "Helmet",
-        "value": "Elk"
-      },
-      {
-        "type": "Eyes",
-        "value": "Chameleon"
-      },
-      {
         "type": "Nose",
         "value": "Bandage"
       },
@@ -13136,6 +13120,22 @@
       {
         "type": "Skin",
         "value": "Metallic"
+      },
+      {
+        "type": "Head",
+        "value": "Weird"
+      },
+      {
+        "type": "Ear Accessories",
+        "value": "Lobe 01"
+      },
+      {
+        "type": "Helmet",
+        "value": "Elk"
+      },
+      {
+        "type": "Eyes",
+        "value": "Chameleon"
       }
     ]
   },
@@ -13178,12 +13178,12 @@
         "value": "Caesar"
       },
       {
-        "type": "Hair",
-        "value": "Unicorn"
-      },
-      {
         "type": "Eye Accessories",
         "value": "Scouter"
+      },
+      {
+        "type": "Hair",
+        "value": "Unicorn"
       }
     ]
   },
@@ -13426,18 +13426,6 @@
     "number": "030",
     "attributes": [
       {
-        "type": "Ears",
-        "value": "Weird 01"
-      },
-      {
-        "type": "Background",
-        "value": "Green"
-      },
-      {
-        "type": "Skin",
-        "value": "Bi-colour"
-      },
-      {
         "type": "Head",
         "value": "Weird"
       },
@@ -13460,6 +13448,18 @@
       {
         "type": "Collar",
         "value": "Tuxedo"
+      },
+      {
+        "type": "Ears",
+        "value": "Weird 01"
+      },
+      {
+        "type": "Background",
+        "value": "Green"
+      },
+      {
+        "type": "Skin",
+        "value": "Bi-colour"
       }
     ]
   },
