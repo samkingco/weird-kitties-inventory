@@ -1602,6 +1602,10 @@
     "number": "135",
     "attributes": [
       {
+        "type": "Eyes",
+        "value": "Laser"
+      },
+      {
         "type": "Helmet",
         "value": "Celestial 01"
       },
@@ -1632,10 +1636,6 @@
       {
         "type": "Background",
         "value": "Yellow"
-      },
-      {
-        "type": "Eyes",
-        "value": "Laser"
       }
     ]
   },
@@ -1842,10 +1842,6 @@
     "number": "140",
     "attributes": [
       {
-        "type": "Head",
-        "value": "Skeleton"
-      },
-      {
         "type": "Skin",
         "value": "Colored"
       },
@@ -1878,6 +1874,10 @@
         "value": "3 Ring piercings"
       },
       {
+        "type": "Head",
+        "value": "Skeleton"
+      },
+      {
         "type": "Helmet",
         "value": "Hood 01"
       },
@@ -1902,6 +1902,26 @@
         "value": "Celestial 01"
       },
       {
+        "type": "Background",
+        "value": "Turquoise"
+      },
+      {
+        "type": "Ears",
+        "value": "Weird 02"
+      },
+      {
+        "type": "Hair",
+        "value": "Curly hair"
+      },
+      {
+        "type": "Helmet",
+        "value": "Caesar"
+      },
+      {
+        "type": "Eyes",
+        "value": "Dreamy"
+      },
+      {
         "type": "Special",
         "value": "Rainbow"
       },
@@ -1924,26 +1944,6 @@
       {
         "type": "Eye Accessories",
         "value": "Ring piercings"
-      },
-      {
-        "type": "Background",
-        "value": "Turquoise"
-      },
-      {
-        "type": "Ears",
-        "value": "Weird 02"
-      },
-      {
-        "type": "Hair",
-        "value": "Curly hair"
-      },
-      {
-        "type": "Helmet",
-        "value": "Caesar"
-      },
-      {
-        "type": "Eyes",
-        "value": "Dreamy"
       }
     ]
   },
@@ -2286,12 +2286,12 @@
         "value": "Mecha"
       },
       {
-        "type": "Additional",
-        "value": "Side horns"
-      },
-      {
         "type": "Beard",
         "value": "Horns 01"
+      },
+      {
+        "type": "Additional",
+        "value": "Side horns"
       }
     ]
   },
@@ -3586,10 +3586,6 @@
         "value": "Armor 01"
       },
       {
-        "type": "Ears",
-        "value": "Weird 01"
-      },
-      {
         "type": "Eye Accessories",
         "value": "Steampunk glases"
       },
@@ -3600,6 +3596,10 @@
       {
         "type": "Skin",
         "value": "Demon 01"
+      },
+      {
+        "type": "Ears",
+        "value": "Weird 01"
       },
       {
         "type": "Whiskers",
@@ -10766,10 +10766,6 @@
         "value": "Spooky aura"
       },
       {
-        "type": "Ear Accessories",
-        "value": "Rings"
-      },
-      {
         "type": "Head",
         "value": "Vengeful spirit"
       },
@@ -10796,6 +10792,10 @@
       {
         "type": "Background",
         "value": "Black"
+      },
+      {
+        "type": "Ear Accessories",
+        "value": "Rings"
       }
     ]
   },
@@ -11674,6 +11674,10 @@
     "number": "363",
     "attributes": [
       {
+        "type": "Beard",
+        "value": "Membrane ridges"
+      },
+      {
         "type": "Skin",
         "value": "Alien 01"
       },
@@ -11704,10 +11708,6 @@
       {
         "type": "Helmet",
         "value": "Celestial 02"
-      },
-      {
-        "type": "Beard",
-        "value": "Membrane ridges"
       },
       {
         "type": "Nose",
@@ -12306,18 +12306,6 @@
     "number": "377",
     "attributes": [
       {
-        "type": "Collar",
-        "value": "Shackles"
-      },
-      {
-        "type": "Eyes",
-        "value": "Round"
-      },
-      {
-        "type": "Special",
-        "value": "Holographic"
-      },
-      {
         "type": "Ears",
         "value": "Jackal"
       },
@@ -12348,6 +12336,18 @@
       {
         "type": "Beard",
         "value": "Wicked eyes"
+      },
+      {
+        "type": "Collar",
+        "value": "Shackles"
+      },
+      {
+        "type": "Eyes",
+        "value": "Round"
+      },
+      {
+        "type": "Special",
+        "value": "Holographic"
       }
     ]
   },
@@ -14731,6 +14731,646 @@
       }
     ]
   },
+  "433": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312818709776302081",
+    "image": "https://lh3.googleusercontent.com/kUbAtA-lQEDa_hxPmJr2BUFyGShnEAj9JpHz4qoLZwzSwegLRbLS5OJX9g1pLAQ9YjOUfFCSDSW06Te3cqV4wyfGBb_JQuQv5h3oeA",
+    "name": "Weird Kitty #433",
+    "number": "433",
+    "attributes": [
+      {
+        "type": "Eye Accessories",
+        "value": "Red marks of the Inner Beast"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Armored whiskers of the Inner Beast"
+      },
+      {
+        "type": "Mouth",
+        "value": "Maw of the Inner Beast"
+      },
+      {
+        "type": "Collar",
+        "value": "Plates of the Inner Beast"
+      },
+      {
+        "type": "Eyes",
+        "value": "Emissive"
+      },
+      {
+        "type": "Background",
+        "value": "Black"
+      },
+      {
+        "type": "Skin",
+        "value": "Metallic"
+      },
+      {
+        "type": "Ears",
+        "value": "Mecha"
+      },
+      {
+        "type": "Special",
+        "value": "Holographic aura"
+      },
+      {
+        "type": "Head",
+        "value": "The Inner Beast"
+      },
+      {
+        "type": "Helmet",
+        "value": "Armor of the Inner Beast"
+      }
+    ]
+  },
+  "434": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312819809287929857",
+    "image": "https://lh3.googleusercontent.com/rfAAOShcX2ppqIurTJUYkWI0RzMksiDDxj3iJxNcqXX9idCUTjjRkoykcxsEt86-n9A0Uawjns4A7DdhF9LV4HDFOjgBjx063TOx8A",
+    "name": "Weird Kitty #434",
+    "number": "434",
+    "attributes": [
+      {
+        "type": "Skin",
+        "value": "Colored"
+      },
+      {
+        "type": "Background",
+        "value": "Pink"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Light whiskers"
+      },
+      {
+        "type": "Eyes",
+        "value": "Cute 01"
+      },
+      {
+        "type": "Collar",
+        "value": "Ring"
+      },
+      {
+        "type": "Head",
+        "value": "Young weird kitty"
+      },
+      {
+        "type": "Ears",
+        "value": "Weird baby ears"
+      },
+      {
+        "type": "Hair",
+        "value": "Very short hair"
+      }
+    ]
+  },
+  "435": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312820908799557633",
+    "image": "https://lh3.googleusercontent.com/H8W6vHpE4bleP2wtGXdgOMES3MZ4m91KgsRn5nnsOLot4N91Mr42JTlFLuvSQTcuqyqZ3OzwfeftjFGsJxGoDOJNHx4HHaSiEUejvA",
+    "name": "Weird Kitty #435",
+    "number": "435",
+    "attributes": [
+      {
+        "type": "Collar",
+        "value": "Donut"
+      },
+      {
+        "type": "Head",
+        "value": "Weird"
+      },
+      {
+        "type": "Ears",
+        "value": "Weird 01"
+      },
+      {
+        "type": "Background",
+        "value": "Purple"
+      },
+      {
+        "type": "Skin",
+        "value": "Cookie"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Candy canes"
+      },
+      {
+        "type": "Eyes",
+        "value": "Arachnid"
+      }
+    ]
+  },
+  "436": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312822008311185409",
+    "image": "https://lh3.googleusercontent.com/qOGhHsDtJpHC-Jh5n-OCxoF46tr-qhKGXu5X1v6-deQEjamTGRifC4MY9pAOXENrpsd-T3uAXrjQ2wrJgLl9GGzmkgoueugVfDZYDw",
+    "name": "Weird Kitty #436",
+    "number": "436",
+    "attributes": [
+      {
+        "type": "Head",
+        "value": "Weird"
+      },
+      {
+        "type": "Skin",
+        "value": "Colored"
+      },
+      {
+        "type": "Eyes",
+        "value": "Bored"
+      },
+      {
+        "type": "Hair",
+        "value": "Punk02"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Light whiskers"
+      },
+      {
+        "type": "Ears",
+        "value": "Weird 01"
+      },
+      {
+        "type": "Collar",
+        "value": "Ring"
+      },
+      {
+        "type": "Background",
+        "value": "Blue"
+      }
+    ]
+  },
+  "437": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312823107822813185",
+    "image": "https://lh3.googleusercontent.com/lFK1RuQG42gr5BHiEFPz9py6jMUWAoi9UErXklzFsoKOSk33vdnnewDQjz7bDjQq0Bgx6THQyiQJuKdMg3bxql4PLnAlXv-u5Qfc7tQ",
+    "name": "Weird Kitty #437",
+    "number": "437",
+    "attributes": [
+      {
+        "type": "Skin",
+        "value": "Colored"
+      },
+      {
+        "type": "Helmet",
+        "value": "Fluffy hat"
+      },
+      {
+        "type": "Collar",
+        "value": "Jingle bells necklace"
+      },
+      {
+        "type": "Eyes",
+        "value": "Cute 01"
+      },
+      {
+        "type": "Background",
+        "value": "Yellow"
+      },
+      {
+        "type": "Head",
+        "value": "Skeleton"
+      },
+      {
+        "type": "Ears",
+        "value": "Skeleton"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Candy canes"
+      }
+    ]
+  },
+  "438": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312824207334440961",
+    "image": "https://lh3.googleusercontent.com/wki6jGuQ9x9v63Mftr4WvWpYUj5iDXMrOKEFZLSL-LmrEjmftTySUWZ4IDlTt8-MowR3D1V9saYlgpDzf72IH2w50lQTPv3Tloqc",
+    "name": "Weird Kitty #438",
+    "number": "438",
+    "attributes": [
+      {
+        "type": "Special",
+        "value": "Frozen"
+      },
+      {
+        "type": "Skin",
+        "value": "Ice"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Candy"
+      },
+      {
+        "type": "Eyes",
+        "value": "Round"
+      },
+      {
+        "type": "Background",
+        "value": "Black"
+      },
+      {
+        "type": "Head",
+        "value": "Mecha"
+      },
+      {
+        "type": "Ears",
+        "value": "Mecha"
+      },
+      {
+        "type": "Collar",
+        "value": "Hexagon"
+      }
+    ]
+  },
+  "439": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312825306846068737",
+    "image": "https://lh3.googleusercontent.com/UguVOwC6hDVpj15Ot3f5PA4BUPMqt8M04b3RYE_RFOibVPyYx7MEJbD7MizORXrtmwK9Y-JALD7FEetrE_lPUd8GMVEq3suLsV-MQA",
+    "name": "Weird Kitty #439",
+    "number": "439",
+    "attributes": [
+      {
+        "type": "Head",
+        "value": "Weird"
+      },
+      {
+        "type": "Eyes",
+        "value": "Round"
+      },
+      {
+        "type": "Skin",
+        "value": "Oriental 01"
+      },
+      {
+        "type": "Helmet",
+        "value": "Ribbon"
+      },
+      {
+        "type": "Ears",
+        "value": "Weird 01"
+      },
+      {
+        "type": "Background",
+        "value": "Orange"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Macaroni"
+      },
+      {
+        "type": "Ear Accessories",
+        "value": "Decorative balls"
+      },
+      {
+        "type": "Collar",
+        "value": "High neck collar"
+      }
+    ]
+  },
+  "440": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312826406357696513",
+    "image": "https://lh3.googleusercontent.com/mvUcRaepJeFVA1tudfcsztHFOLoVHvrF2JgRlr8YYxvBogiDH-245QORlLyC3EoIYlVYwWl7GlqqVNH1yGd022QOyS0R9GLljRWtnw",
+    "name": "Weird Kitty #440",
+    "number": "440",
+    "attributes": [
+      {
+        "type": "Head",
+        "value": "Weird"
+      },
+      {
+        "type": "Skin",
+        "value": "Colored"
+      },
+      {
+        "type": "Eyes",
+        "value": "Round"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Hairy 01"
+      },
+      {
+        "type": "Helmet",
+        "value": "Elk"
+      },
+      {
+        "type": "Background",
+        "value": "Turquoise"
+      },
+      {
+        "type": "Ears",
+        "value": "Weird 02"
+      },
+      {
+        "type": "Collar",
+        "value": "Bell collar"
+      },
+      {
+        "type": "Nose",
+        "value": "Clown nose"
+      }
+    ]
+  },
+  "441": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312827505869324289",
+    "image": "https://lh3.googleusercontent.com/DI1Iuhwv6k_l1ONh-ltDbxTP6LeqmeME1zxz29JhjZHa5O6EAwwvSNeKHWZwQBoT4w5axC3Yam-YV2higfEuI4ojTg6f41gFhyTFouw",
+    "name": "Weird Kitty #441",
+    "number": "441",
+    "attributes": [
+      {
+        "type": "Head",
+        "value": "Weird"
+      },
+      {
+        "type": "Skin",
+        "value": "Colored"
+      },
+      {
+        "type": "Eyes",
+        "value": "Bored"
+      },
+      {
+        "type": "Ears",
+        "value": "Demon 01"
+      },
+      {
+        "type": "Beard",
+        "value": "Bushy beard"
+      },
+      {
+        "type": "Helmet",
+        "value": "Fluffy hat"
+      },
+      {
+        "type": "Collar",
+        "value": "Scarf 01"
+      },
+      {
+        "type": "Ear Accessories",
+        "value": "Punk rings 01"
+      },
+      {
+        "type": "Background",
+        "value": "Green"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Hairy 02"
+      }
+    ]
+  },
+  "442": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312828605380952065",
+    "image": "https://lh3.googleusercontent.com/1VApWPPtrFLyex9ajUF8WnjRch1DvRvhPXWP9htzPaka7crGj5qfLgbUu8i8syODoQBxwbe7j78eFbwNPx8aT28P5EkJMg9VVwZXHw",
+    "name": "Weird Kitty #442",
+    "number": "442",
+    "attributes": [
+      {
+        "type": "Skin",
+        "value": "Colored"
+      },
+      {
+        "type": "Background",
+        "value": "Winter background"
+      },
+      {
+        "type": "Head",
+        "value": "Big snow kitty"
+      },
+      {
+        "type": "Ears",
+        "value": "Beast ears"
+      },
+      {
+        "type": "Helmet",
+        "value": "Great horns of the beast"
+      },
+      {
+        "type": "Special",
+        "value": "Winter special"
+      },
+      {
+        "type": "Hair",
+        "value": "Wild hair"
+      },
+      {
+        "type": "Eyes",
+        "value": "Emissive"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Wild hairy whiskers"
+      },
+      {
+        "type": "Mouth",
+        "value": "Great beast fangs"
+      },
+      {
+        "type": "Beard",
+        "value": "Wild hair"
+      },
+      {
+        "type": "Collar",
+        "value": "Frozen necklace"
+      }
+    ]
+  },
+  "443": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312830804404207617",
+    "image": "https://lh3.googleusercontent.com/ZPfX411JPP5b7GHyZJZ5r3QlIVSh2i2Hw7N3v88XoJhLcfuUuyVveuPh8AfTQzo0mmGUEarynOr0FnN0FWgDCqjDwtIRbW7FEwqe",
+    "name": "Weird Kitty #443",
+    "number": "443",
+    "attributes": [
+      {
+        "type": "Special",
+        "value": "Aurora lights"
+      },
+      {
+        "type": "Head",
+        "value": "Dark aurora"
+      },
+      {
+        "type": "Skin",
+        "value": "Dark aurora skin"
+      },
+      {
+        "type": "Ears",
+        "value": "Dark aurora ears"
+      },
+      {
+        "type": "Hair",
+        "value": "Dark aurora hair"
+      },
+      {
+        "type": "Eye Accessories",
+        "value": "Dark eyelashes"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Dark aurora whiskers"
+      },
+      {
+        "type": "Beard",
+        "value": "Dark aurora short beard"
+      },
+      {
+        "type": "Collar",
+        "value": "Dark aurora"
+      },
+      {
+        "type": "Eyes",
+        "value": "Emissive"
+      },
+      {
+        "type": "Background",
+        "value": "Black"
+      }
+    ]
+  },
+  "444": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312831903915835393",
+    "image": "https://lh3.googleusercontent.com/zQixlb7uSt02Pwa8aI-kd1_54Ghbjz_HVouUvxUrQMgFSMbqzPUhSeWHCbbKuZyzkNXTEwnfNhOpmVg-WqRKkoJmzU6PltZ169R3",
+    "name": "Weird Kitty #444",
+    "number": "444",
+    "attributes": [
+      {
+        "type": "Head",
+        "value": "Ice Goram"
+      },
+      {
+        "type": "Skin",
+        "value": "Ice Goram skin"
+      },
+      {
+        "type": "Ears",
+        "value": "Ice Goram ears"
+      },
+      {
+        "type": "Hair",
+        "value": "Icy rocks"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Ice stalactites"
+      },
+      {
+        "type": "Mouth",
+        "value": "Pointed Mouth of the Ice Goram"
+      },
+      {
+        "type": "Collar",
+        "value": "Antique bronze necklace"
+      },
+      {
+        "type": "Eyes",
+        "value": "Emissive"
+      },
+      {
+        "type": "Background",
+        "value": "Winter background"
+      },
+      {
+        "type": "Special",
+        "value": "Winter background"
+      }
+    ]
+  },
+  "445": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312833003427463169",
+    "image": "https://lh3.googleusercontent.com/KQGI99wJ7fWg6jOPXtcp-dAlfyyoPFNP-PUNtT25wcrZARpPkzkSdiJ589sxjw9_xg9rHJwqW5Rmxf1EUZHbDmivCNPlrvN7cAy-",
+    "name": "Weird Kitty #445",
+    "number": "445",
+    "attributes": [
+      {
+        "type": "Mouth",
+        "value": "Fangs 01"
+      },
+      {
+        "type": "Special",
+        "value": "Aurora lights"
+      },
+      {
+        "type": "Head",
+        "value": "Sparkle crystal kitty"
+      },
+      {
+        "type": "Skin",
+        "value": "Sparkle crystal kitty"
+      },
+      {
+        "type": "Eyes",
+        "value": "Emissive"
+      },
+      {
+        "type": "Ears",
+        "value": "Sharp ears"
+      },
+      {
+        "type": "Hair",
+        "value": "Energy crystals"
+      },
+      {
+        "type": "Background",
+        "value": "Black"
+      },
+      {
+        "type": "Eye Accessories",
+        "value": "Stones of haste"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Sparkle crystal kitty whiskers"
+      },
+      {
+        "type": "Beard",
+        "value": "Sparkle crystal kitty beard"
+      },
+      {
+        "type": "Collar",
+        "value": "Pointed necklace"
+      }
+    ]
+  },
+  "446": {
+    "tokenId": "14340956495070452533448411743660034281365817504224433241868312834102939090945",
+    "image": "https://lh3.googleusercontent.com/EOAFxNxhT55WslnmXxuB7tvDmKbJSp1xJ7wRPs1pUCTezv0eYWPN6rO7xg7F3lx4QOkdLQmB0m7m_MYPYq4TP8qFkxb2zxuycDtUyA",
+    "name": "Weird Kitty #446",
+    "number": "446",
+    "attributes": [
+      {
+        "type": "Special",
+        "value": "Water aura"
+      },
+      {
+        "type": "Head",
+        "value": "Water elemental"
+      },
+      {
+        "type": "Skin",
+        "value": "Water elemental"
+      },
+      {
+        "type": "Ears",
+        "value": "Water elemental"
+      },
+      {
+        "type": "Helmet",
+        "value": "Water elemental fluid"
+      },
+      {
+        "type": "Eyes",
+        "value": "Emissive"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Aquatic whiskers"
+      },
+      {
+        "type": "Collar",
+        "value": "Elemental containment collar"
+      },
+      {
+        "type": "Background",
+        "value": "Abysmal blue"
+      }
+    ]
+  },
   "099": {
     "tokenId": "14340956495070452533448411743660034281365817504224433241868312450373380997121",
     "image": "https://lh3.googleusercontent.com/J4Zdk_quZap8B0Pw4GIi1MmFCvvhoa0wg40VO02L6X9EF5Wzw6MySeVFjLXUdZEBbnsjsSS61WaAeVefVEfBThQ7vV1Mz-bU9h-DaQ",
@@ -15562,6 +16202,14 @@
     "number": "081",
     "attributes": [
       {
+        "type": "Head",
+        "value": "Weird"
+      },
+      {
+        "type": "Whiskers",
+        "value": "Arrows"
+      },
+      {
         "type": "Collar",
         "value": "Spiky armor"
       },
@@ -15574,24 +16222,16 @@
         "value": "Scars 02"
       },
       {
+        "type": "Helmet",
+        "value": "Helm of the Dragon Slayer"
+      },
+      {
         "type": "Background",
         "value": "Black"
       },
       {
         "type": "Ears",
         "value": "Steel 01"
-      },
-      {
-        "type": "Head",
-        "value": "Weird"
-      },
-      {
-        "type": "Helmet",
-        "value": "Helm of the Dragon Slayer"
-      },
-      {
-        "type": "Whiskers",
-        "value": "Arrows"
       }
     ]
   },
@@ -17298,12 +17938,12 @@
     "number": "046",
     "attributes": [
       {
-        "type": "Ear Accessories",
-        "value": "Industrial"
-      },
-      {
         "type": "Collar",
         "value": "Vase"
+      },
+      {
+        "type": "Ear Accessories",
+        "value": "Industrial"
       },
       {
         "type": "Nose",
@@ -17590,10 +18230,6 @@
     "number": "040",
     "attributes": [
       {
-        "type": "Ears",
-        "value": "Mecha"
-      },
-      {
         "type": "Background",
         "value": "Pink"
       },
@@ -17608,6 +18244,10 @@
       {
         "type": "Eyes",
         "value": "Laser"
+      },
+      {
+        "type": "Ears",
+        "value": "Mecha"
       },
       {
         "type": "Collar",
@@ -17722,10 +18362,6 @@
     "number": "037",
     "attributes": [
       {
-        "type": "Nose",
-        "value": "Bandage"
-      },
-      {
         "type": "Head",
         "value": "Weird"
       },
@@ -17734,16 +18370,16 @@
         "value": "Lobe 01"
       },
       {
-        "type": "Helmet",
-        "value": "Elk"
+        "type": "Nose",
+        "value": "Bandage"
       },
       {
         "type": "Beard",
         "value": "Knob"
       },
       {
-        "type": "Eyes",
-        "value": "Chameleon"
+        "type": "Helmet",
+        "value": "Elk"
       },
       {
         "type": "Collar",
@@ -17760,6 +18396,10 @@
       {
         "type": "Background",
         "value": "Green"
+      },
+      {
+        "type": "Eyes",
+        "value": "Chameleon"
       },
       {
         "type": "Skin",
@@ -18054,8 +18694,16 @@
     "number": "030",
     "attributes": [
       {
+        "type": "Head",
+        "value": "Weird"
+      },
+      {
         "type": "Ears",
         "value": "Weird 01"
+      },
+      {
+        "type": "Mouth",
+        "value": "Gas mask"
       },
       {
         "type": "Background",
@@ -18064,14 +18712,6 @@
       {
         "type": "Skin",
         "value": "Bi-colour"
-      },
-      {
-        "type": "Head",
-        "value": "Weird"
-      },
-      {
-        "type": "Mouth",
-        "value": "Gas mask"
       },
       {
         "type": "Eyes",
