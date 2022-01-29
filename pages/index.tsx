@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useQueryState } from "next-usequerystate";
-import useSWRInfinite, { SWRInfiniteKeyLoader } from "swr/infinite";
+import useSWRInfinite from "swr/infinite";
 import { fetcher, FetchError, Kitty, parseAddress } from "../utils";
 import { KittiesResponse } from "./api/kitties";
+import { KeyLoader } from "swr";
 
 function keyMaker(
   limit: number,
   kittyNumbers: string[],
   walletAddress: string,
   isValidAddress: boolean
-): SWRInfiniteKeyLoader {
+): KeyLoader<KittiesResponse> {
   return (_, previousPageData) => {
     if (previousPageData && !previousPageData.hasNextPage) return null;
     if (walletAddress && !isValidAddress) return null;
@@ -42,6 +43,11 @@ const Home: NextPage = () => {
   const [isValidatingAddress, setIsValidatingAddress] = useState(false);
   const [isValidAddress, setIsValidAddress] = useState(false);
   const [parsedAddress, setParsedAddress] = useState("");
+  const [searchTerm, setSearchTerm] = useQueryState("kitty");
+  const [searchTermInput, setSearchTermInput] = useState(searchTerm || "");
+  const kittyNumbers = searchTermInput
+    ? searchTermInput.split(" ").map((i) => i.trim())
+    : [];
 
   useEffect(() => {
     if (walletAddressInput) {
@@ -61,11 +67,13 @@ const Home: NextPage = () => {
     }
   }, [walletAddressInput]);
 
-  const [searchTerm, setSearchTerm] = useQueryState("kitty");
-  const [searchTermInput, setSearchTermInput] = useState(searchTerm || "");
-  const kittyNumbers = searchTermInput
-    ? searchTermInput.split(" ").map((i) => i.trim())
-    : [];
+  useEffect(() => {
+    setWalletAddress(walletAddressInput === "" ? null : walletAddressInput);
+  }, [walletAddressInput]);
+
+  useEffect(() => {
+    setSearchTerm(searchTermInput === "" ? null : searchTermInput);
+  }, [searchTermInput]);
 
   const PAGE_SIZE = 60;
   const { data, error, size, setSize } = useSWRInfinite<
@@ -84,21 +92,6 @@ const Home: NextPage = () => {
   const isEmpty = data && data[0]?.kitties.length === 0;
   const hasReachedEnd =
     isEmpty || (data && !data[data.length - 1]?.hasNextPage);
-
-  useEffect(() => {
-    setWalletAddress(walletAddressInput === "" ? null : walletAddressInput);
-  }, [walletAddressInput]);
-
-  useEffect(() => {
-    setSearchTerm(searchTermInput === "" ? null : searchTermInput);
-  }, [searchTermInput]);
-
-  console.log({
-    parsedAddress,
-    isEmpty,
-    isLoadingInitialData,
-    isValidatingAddress,
-  });
 
   return (
     <div className="page">
