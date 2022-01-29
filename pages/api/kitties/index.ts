@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import fetch from "node-fetch";
 import kittiesData from "../../../data/ranked-kitties.json";
-import { isValidAddress, Kitty, ResponseError } from "../../../utils";
+import { Kitty, parseAddress, ResponseError } from "../../../utils";
 
 export interface KittiesResponse {
   kitties: Kitty[];
@@ -30,20 +31,21 @@ export default async (
 
   let kitties = rankedKitties;
 
-  if (walletAddress && isValidAddress(walletAddress)) {
-    // Get tokenIds in wallet from opensea
-    const response = await fetch(
-      `https://api.opensea.io/api/v1/assets?asset_contract_address=0x495f947276749ce646f68ac8c248420045cb7b5e&collection=weird-kitties&limit=50&owner=${walletAddress}`
-    );
+  if (walletAddress) {
+    const { address, isValid } = await parseAddress(walletAddress);
 
-    // Parse to JSON
-    const json = await response.json();
+    if (address && isValid && process.env.OS_API_KEY) {
+      // Get tokenIds in wallet from opensea
+      const response = await fetch(
+        `https://api.opensea.io/api/v1/assets?asset_contract_address=0x495f947276749ce646f68ac8c248420045cb7b5e&collection=weird-kitties&limit=50&owner=${address}`,
+        { headers: { "X-API-KEY": process.env.OS_API_KEY } }
+      );
 
-    const ownedTokenIds = json.assets.map((asset: any) => asset.token_id);
-
-    kitties = kitties.filter((i) =>
-      ownedTokenIds.includes(i.tokenId)
-    );
+      // Parse to JSON
+      const json: any = await response.json();
+      const ownedTokenIds = json.assets.map((asset: any) => asset.token_id);
+      kitties = kitties.filter((i) => ownedTokenIds.includes(i.tokenId));
+    }
   }
 
   if (kittyNumber) {

@@ -4,7 +4,7 @@ export interface Kitty {
   tokenId: string;
   name: string;
   number: string;
-  image:  string;
+  image: string;
   attributes: KittyAttribute[];
   rank: number;
 }
@@ -36,11 +36,22 @@ export async function fetcher(url: string) {
   return res.json();
 }
 
-export function isValidAddress(address: string) {
-  try {
-    ethers.utils.getAddress(address);
-  } catch (e) {
-    return false;
+export async function parseAddress(address: string) {
+  const provider = ethers.getDefaultProvider();
+  let ensAddress;
+  if (address.trim().endsWith(".eth")) {
+    ensAddress = await provider.resolveName(address);
   }
-  return true;
+  try {
+    ethers.utils.getAddress(ensAddress || address);
+  } catch (e) {
+    return {
+      address: ensAddress || address,
+      isValid: false,
+    };
+  }
+  return {
+    address: ensAddress || address,
+    isValid: true,
+  };
 }

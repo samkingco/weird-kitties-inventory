@@ -1,29 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import useSWRInfinite from "swr/infinite";
-import { KeyLoader } from "swr";
-import { fetcher, FetchError, isValidAddress, Kitty } from "../utils";
+import { useQueryState } from "next-usequerystate";
+import useSWRInfinite, { SWRInfiniteKeyLoader } from "swr/infinite";
+import { fetcher, FetchError, Kitty, parseAddress } from "../utils";
 import { KittiesResponse } from "./api/kitties";
 
-const getKey: (
+function keyMaker(
   limit: number,
   kittyNumbers: string[],
-  walletAddress: string
-) => KeyLoader<KittiesResponse> =
-  (limit, kittyNumbers, walletAddress) => (_, previousPageData) => {
+  walletAddress: string,
+  isValidAddress: boolean
+): SWRInfiniteKeyLoader {
+  return (_, previousPageData) => {
     if (previousPageData && !previousPageData.hasNextPage) return null;
+    if (walletAddress && !isValidAddress) return null;
 
     const queryParams = new URLSearchParams();
-
     queryParams.set("limit", limit.toString());
-
     if (previousPageData && previousPageData.nextCursor) {
       queryParams.set("cursor", previousPageData.nextCursor.toString());
     }
-    if (walletAddress && isValidAddress(walletAddress)) {
+    if (walletAddress) {
       queryParams.set("walletAddress", walletAddress);
-    } else {
+    }
+    if (kittyNumbers && kittyNumbers.length > 0) {
       kittyNumbers.forEach((kittyNumber) => {
         queryParams.append("kittyNumber", kittyNumber);
       });
@@ -31,21 +32,46 @@ const getKey: (
 
     return `/api/kitties?${queryParams.toString()}`;
   };
+}
 
 const Home: NextPage = () => {
-  const [walletAddress, setWalletAddress] = useState("");
-  const validWallet = isValidAddress(walletAddress);
+  const [walletAddress, setWalletAddress] = useQueryState("address");
+  const [walletAddressInput, setWalletAddressInput] = useState(
+    walletAddress || ""
+  );
+  const [isValidatingAddress, setIsValidatingAddress] = useState(false);
+  const [isValidAddress, setIsValidAddress] = useState(false);
+  const [parsedAddress, setParsedAddress] = useState("");
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const kittyNumbers = searchTerm
-    ? searchTerm.split(",").map((i) => i.trim())
+  useEffect(() => {
+    if (walletAddressInput) {
+      setIsValidatingAddress(true);
+      parseAddress(walletAddressInput)
+        .then(({ address, isValid }) => {
+          setParsedAddress(address);
+          setIsValidAddress(isValid);
+          setIsValidatingAddress(false);
+        })
+        .catch((e) => {
+          console.error(e);
+          setIsValidatingAddress(false);
+        });
+    } else {
+      setParsedAddress("");
+    }
+  }, [walletAddressInput]);
+
+  const [searchTerm, setSearchTerm] = useQueryState("kitty");
+  const [searchTermInput, setSearchTermInput] = useState(searchTerm || "");
+  const kittyNumbers = searchTermInput
+    ? searchTermInput.split(" ").map((i) => i.trim())
     : [];
 
   const PAGE_SIZE = 60;
   const { data, error, size, setSize } = useSWRInfinite<
     KittiesResponse,
     FetchError
-  >(getKey(PAGE_SIZE, kittyNumbers, walletAddress), fetcher);
+  >(keyMaker(PAGE_SIZE, kittyNumbers, parsedAddress, isValidAddress), fetcher);
 
   const kitties = data
     ? data.reduce((acc: Kitty[], page) => [...acc, ...page.kitties], [])
@@ -58,6 +84,21 @@ const Home: NextPage = () => {
   const isEmpty = data && data[0]?.kitties.length === 0;
   const hasReachedEnd =
     isEmpty || (data && !data[data.length - 1]?.hasNextPage);
+
+  useEffect(() => {
+    setWalletAddress(walletAddressInput === "" ? null : walletAddressInput);
+  }, [walletAddressInput]);
+
+  useEffect(() => {
+    setSearchTerm(searchTermInput === "" ? null : searchTermInput);
+  }, [searchTermInput]);
+
+  console.log({
+    parsedAddress,
+    isEmpty,
+    isLoadingInitialData,
+    isValidatingAddress,
+  });
 
   return (
     <div className="page">
@@ -79,15 +120,14 @@ const Home: NextPage = () => {
 
         <div className="search-container">
           <input
-            value={walletAddress}
-            onChange={(e) => setWalletAddress(e.currentTarget.value)}
+            value={walletAddressInput || ""}
+            onChange={(e) => setWalletAddressInput(e.currentTarget.value)}
             placeholder="Paste wallet address"
           />
           <input
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.currentTarget.value)}
+            value={searchTermInput || ""}
+            onChange={(e) => setSearchTermInput(e.currentTarget.value)}
             placeholder="Search by kitty numbers"
-            disabled={Boolean(walletAddress && validWallet)}
           />
         </div>
 
@@ -124,7 +164,12 @@ const Home: NextPage = () => {
           </article>
         )}
 
-        {!(hasReachedEnd || isLoadingInitialData || isLoadingMore) && (
+        {!(
+          hasReachedEnd ||
+          isLoadingInitialData ||
+          isValidatingAddress ||
+          isLoadingMore
+        ) && (
           <div className="center-content">
             <button onClick={() => setSize(size + 1)} disabled={isLoadingMore}>
               See more kitties
